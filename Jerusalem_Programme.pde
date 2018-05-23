@@ -1,39 +1,44 @@
 // Mohammed Fahad 
 // @mohfunk
 
-int margin = 15;
+int margin = 5;
+int blockDrawSize = 3;
+int blockRealSize = 5;
+int blockW = 7;
+int blockH = 10;
+int arabicShift = blockW - 1; // Arabic is right to left
 void setup() {
-  size(800, 1130); // 770(+ 30 marign) x 1100 (+ 30 margin)
+  size(800, 1130); 
   background(0);
   
 }
 
 void showFGrid() {
   
-  for (int i = 15; i <= 1130; i += 100) {
+  for (int i = margin; i <= 1130; i += 100) {
     stroke(255, 30.0);
     strokeWeight(3);
-    line(15, i, 785, i);
+    line(margin, i, 785, i);
   }
-   for (int j = 15; j <= 800; j += 70) {
+   for (int j = margin; j <= 800; j += 70) {
     stroke(255, 30.0);
     strokeWeight(3);
-    line(j, 15, j, 1115);
+    line(j, margin, j, 1115);
   }
 }
 
 
 void showLGrid(boolean full) {
   if (full) {
-      for (int i = 15; i <= 1115; i += 10) {
+      for (int i = margin; i <= 1115; i += 10) {
       stroke(255, 30.0);
       strokeWeight(1);
-      line(15, i, 785, i);
+      line(margin, i, 785, i);
     }
-     for (int j = 15; j <= 785; j += 10) {
+     for (int j = margin; j <= 785; j += 10) {
       stroke(255, 30.0);
       strokeWeight(1);
-      line(j, 15, j, 1115);
+      line(j, margin, j, 1115);
     }
   }
   
@@ -44,19 +49,19 @@ void hamza(int x, int y, int sx, int sy) {
    noFill();
   stroke(255);
   strokeWeight(2);
-  rect(15 + (60 - (10 * (sx-1)) + (70 * (x-1))), 15 + (00 + (10 * (sy-1)) + (100 * (y-1))), 8,8);
-  rect(15 + (50 - (10 * (sx-1)) + (70 * (x-1))), 15 + (00 + (10 * (sy-1)) + (100 * (y-1))), 8,8);
-  rect(15 + (50 - (10 * (sx-1)) + (70 * (x-1))), 15 + (10 + (10 * (sy-1)) + (100 * (y-1))), 8,8);
-  rect(15 + (40 - (10 * (sx-1)) + (70 * (x-1))), 15 + (20 + (10 * (sy-1)) + (100 * (y-1))), 8,8);
-  rect(15 + (50 - (10 * (sx-1)) + (70 * (x-1))), 15 + (20 + (10 * (sy-1)) + (100 * (y-1))), 8,8);
-  rect(15 + (60 - (10 * (sx-1)) + (70 * (x-1))), 15 + (20 + (10 * (sy-1)) + (100 * (y-1))), 8,8);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 0)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 0) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 1)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 0) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 1)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 1) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 2)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 2) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 1)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 2) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 0)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 2) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
   
 }
 
   
 void draw () {
-  showFGrid();
-  showLGrid(true);
+  //showFGrid();
+  //showLGrid(true);
   hamza(1, 1, 1, 1);
   hamza(2, 1, 5, 1);
   hamza(3, 1, 4, 1);
