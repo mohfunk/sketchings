@@ -1,12 +1,14 @@
 // Mohammed Fahad 
 // @mohfunk
 
-int margin = 5;
+int margin = 15;
 int blockDrawSize = 3;
 int blockRealSize = 5;
 int blockW = 7;
 int blockH = 10;
 int arabicShift = blockW - 1; // Arabic is right to left
+
+
 void setup() {
   size(800, 1130); 
   background(0);
@@ -15,30 +17,30 @@ void setup() {
 
 void showFGrid() {
   
-  for (int i = margin; i <= 1130; i += 100) {
+  for (int i = margin; i <= height; i += (blockRealSize * blockH)) {
     stroke(255, 30.0);
     strokeWeight(3);
-    line(margin, i, 785, i);
+    line(margin, i, width - margin, i);
   }
-   for (int j = margin; j <= 800; j += 70) {
+   for (int j = margin; j <= width; j += (blockRealSize * blockW)) {
     stroke(255, 30.0);
     strokeWeight(3);
-    line(j, margin, j, 1115);
+    line(j, margin, j, height - margin);
   }
 }
 
 
 void showLGrid(boolean full) {
   if (full) {
-      for (int i = margin; i <= 1115; i += 10) {
+      for (int i = margin; i <= height - margin; i += blockRealSize) {
       stroke(255, 30.0);
       strokeWeight(1);
-      line(margin, i, 785, i);
+      line(margin, i, width - margin, i);
     }
-     for (int j = margin; j <= 785; j += 10) {
+     for (int j = margin; j <= width - margin; j += blockRealSize) {
       stroke(255, 30.0);
       strokeWeight(1);
-      line(j, margin, j, 1115);
+      line(j, margin, j, height - margin);
     }
   }
   
@@ -60,8 +62,15 @@ void hamza(int x, int y, int sx, int sy) {
 
   
 void draw () {
-  //showFGrid();
-  //showLGrid(true);
+  // for tweeking
+  margin = 15;
+  blockDrawSize = 3;
+  blockRealSize = 5;
+  blockW = 7;
+  blockH = 10;
+  arabicShift = blockW - 1;
+  showFGrid();
+  showLGrid(true);
   hamza(1, 1, 1, 1);
   hamza(2, 1, 5, 1);
   hamza(3, 1, 4, 1);
@@ -69,6 +78,6 @@ void draw () {
   hamza(5, 1, 4, 8);
   hamza(6, 1, 4, 1);
   hamza(8, 1, 4, 8);
- noLoop();
+  noLoop();
   
 }
