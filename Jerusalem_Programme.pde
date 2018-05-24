@@ -10,7 +10,7 @@ int arabicShift = blockW - 1; // Arabic is right to left
 
 
 void setup() {
-  size(800, 1130); 
+  size(800, 1130, P2D); 
   background(0);
   
 }
@@ -73,16 +73,58 @@ void lLine(int x, int y, int sx, int sy, int len, int hor, int ver) { // len = h
 
 void lDot(int x, int y, int sx, int sy) {
   
-  rect(margin + (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1)), margin + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1)), blockDrawSize, blockDrawSize);
+  rect(margin + (blockRealSize * arabicShift) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1)), margin + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1)), blockDrawSize, blockDrawSize);
   
   
 }
 
+void dLine(int x, int y, int sx, int sy, int len, float degx, float degy) {
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+  for(int i = 0; i < len; ++i) {
+    rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * i * degx)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * i * degy) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  }
+}
+
+// (0, -1) , (0, 1) , (-1, 0), (1, 0)
+void tBlocksH(int x, int y, int sx, int sy, int orix, int oriy) {
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * orix)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * oriy) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * orix)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * oriy) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * orix)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * oriy) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  
+  
+}
+
+void tBlocksHor(int x, int y, int sx, int sy, int ori) {
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 0)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 0) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * -1)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * ori) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * -2)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 0) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  
+}
+
+void tBlocksVer(int x, int y, int sx, int sy, int ori) {
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 0)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 0) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * ori)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * -1) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 0)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * -2) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  
+}
 
 void draw () {
+
   // for tweeking
-  // showFGrid();
-  // showLGrid(true);
+  showFGrid();
+  showLGrid(true);
+  
   hamza(1, 1, 1, 1);
   hamza(2, 1, 5, 1);
   hamza(3, 1, 4, 1);
@@ -92,13 +134,34 @@ void draw () {
   hamza(8, 1, 4, 8);
   lLine(11, 2, 4, 1, 7, 0, 1);
   hamza(11, 1, 3, 5);
-  lLine(10, 2, 4, 1, 7, 0, 1);
+  lLine(10, 2, 4, 1, 6, 0, 1);
   lLine(10, 2, 1, 7, 4, 1, 0);
   lLine(10, 1, 4, 4, 3, 0, 1);
   lLine(10, 1, 1, 7, 4, 1, 0);
   hamza(10, 1, 4, 1);
   lDot(5, 5, 4, 1);
   
-  noLoop();
+  //for(int i = 1; i < 7; ++i) {
+  //  lLine(i, 2, 1, 4, 7, 1, 0);
+  //}
+
+ dLine(10, 5, 1, 7, 4, 1, -1);
+ tBlocksHor(6, 7, 1, 2, 1);
+ tBlocksVer(1, 7, 1, 2, 1);
+ tBlocksHor(9, 7, 1, 2, -1);
+ tBlocksVer(3, 7, 1, 2, -1);
+ 
+ // (11, 10) 1
+ lLine(11, 10, 4, 1, 7, 0, 1);
+ // (10, 10) 2
+ lLine(10, 10, 6, 1, 7, 0, 1);
+ lLine(10, 10, 2, 1, 4, 1, 0);
+ // (9, 10) 3
+ lLine(9, 10, 6, 1, 7, 0, 1);
+ lLine(9, 10, 2, 2, 4, 1, 0);
+ lDot(9, 10, 4, 1);
+ lDot(9, 10, 2, 1);
+
+ noLoop();
   
 }
