@@ -1,9 +1,9 @@
 // Mohammed Fahad 
 // @mohfunk
 
-int margin = 15;
-int blockDrawSize = 3;
-int blockRealSize = 5;
+int margin = 10;
+int blockDrawSize = 8;
+int blockRealSize = 10;
 int blockW = 7;
 int blockH = 10;
 int arabicShift = blockW - 1; // Arabic is right to left
@@ -48,7 +48,7 @@ void showLGrid(boolean full) {
 }
 
 void hamza(int x, int y, int sx, int sy) {
-   noFill();
+  noFill();
   stroke(255);
   strokeWeight(2);
   rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * 0)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * 0) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
@@ -60,15 +60,19 @@ void hamza(int x, int y, int sx, int sy) {
   
 }
 
+void lLine(int x, int y, int sx, int sy, int len, int hor, int ver) { // len = how many blocks, ori = 0 -> horizental, 1 -> vertical
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+  for(int i = 0; i < len; ++i) {
+    rect(margin + (((blockRealSize * arabicShift) - (blockRealSize * i * hor)) - (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1))), margin + ((blockRealSize * i * ver) + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1))), blockDrawSize, blockDrawSize);
+  }
+  
+}
+
   
 void draw () {
   // for tweeking
-  margin = 15;
-  blockDrawSize = 3;
-  blockRealSize = 5;
-  blockW = 7;
-  blockH = 10;
-  arabicShift = blockW - 1;
   showFGrid();
   showLGrid(true);
   hamza(1, 1, 1, 1);
@@ -78,6 +82,7 @@ void draw () {
   hamza(5, 1, 4, 8);
   hamza(6, 1, 4, 1);
   hamza(8, 1, 4, 8);
+  lLine( 5, 5, 1, 1, 7, 1, 0);
   noLoop();
   
 }
