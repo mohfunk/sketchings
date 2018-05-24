@@ -73,16 +73,16 @@ void lLine(int x, int y, int sx, int sy, int len, int hor, int ver) { // len = h
 
 void lDot(int x, int y, int sx, int sy) {
   
-  rect(margin + (blockDrawSize * (sx-1)) + ((blockRealSize * blockW) * (x-1)), margin + (blockDrawSize * (sy-1)) + ((blockDrawSize * blockH) * (y-1)), blockDrawSize, blockDrawSize);
+  rect(margin + (blockRealSize * (sx-1)) + ((blockRealSize * blockW) * (x-1)), margin + (blockRealSize * (sy-1)) + ((blockRealSize * blockH) * (y-1)), blockDrawSize, blockDrawSize);
   
   
 }
 
-  
+
 void draw () {
   // for tweeking
-  showFGrid();
-  showLGrid(true);
+  // showFGrid();
+  // showLGrid(true);
   hamza(1, 1, 1, 1);
   hamza(2, 1, 5, 1);
   hamza(3, 1, 4, 1);
@@ -98,6 +98,7 @@ void draw () {
   lLine(10, 1, 1, 7, 4, 1, 0);
   hamza(10, 1, 4, 1);
   lDot(5, 5, 4, 1);
+  
   noLoop();
   
 }
