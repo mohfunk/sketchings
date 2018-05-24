@@ -1,7 +1,7 @@
 // Mohammed Fahad 
 // @mohfunk
 
-int margin = 10;
+int margin = 5;
 int blockDrawSize = 8;
 int blockRealSize = 10;
 int blockW = 7;
@@ -70,6 +70,14 @@ void lLine(int x, int y, int sx, int sy, int len, int hor, int ver) { // len = h
   
 }
 
+
+void lDot(int x, int y, int sx, int sy) {
+  
+  rect(margin + (blockDrawSize * (sx-1)) + ((blockRealSize * blockW) * (x-1)), margin + (blockDrawSize * (sy-1)) + ((blockDrawSize * blockH) * (y-1)), blockDrawSize, blockDrawSize);
+  
+  
+}
+
   
 void draw () {
   // for tweeking
@@ -82,7 +90,14 @@ void draw () {
   hamza(5, 1, 4, 8);
   hamza(6, 1, 4, 1);
   hamza(8, 1, 4, 8);
-  lLine( 5, 5, 1, 1, 7, 1, 0);
+  lLine(11, 2, 4, 1, 7, 0, 1);
+  hamza(11, 1, 3, 5);
+  lLine(10, 2, 4, 1, 7, 0, 1);
+  lLine(10, 2, 1, 7, 4, 1, 0);
+  lLine(10, 1, 4, 4, 3, 0, 1);
+  lLine(10, 1, 1, 7, 4, 1, 0);
+  hamza(10, 1, 4, 1);
+  lDot(5, 5, 4, 1);
   noLoop();
   
 }
