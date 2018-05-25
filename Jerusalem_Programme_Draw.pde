@@ -4,7 +4,7 @@ void draw () {
   // for tweeking
   showFGrid();
   showLGrid(true);
-  
+  /*
   hamza(1, 1, 1, 1);
   hamza(2, 1, 5, 1);
   hamza(3, 1, 4, 1);
@@ -74,7 +74,7 @@ void draw () {
  for (int i = 1; i < 10; ++i) {
    lLine(1, 10, 1, i, 7, 1, 0);
  }
-
+*/
  noLoop();
   
 }
