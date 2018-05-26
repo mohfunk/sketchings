@@ -1,6 +1,6 @@
-int margin = 5;
-int blockDrawSize = 3;
-int blockRealSize = 5;
-int blockW = 9;
-int blockH = 12;
-int arabicShift = blockW - 1; // Arabic is right to left
+int m = 5; // margin
+int bds = 3; // draw block size
+int brs = 5; // real block size
+int bw = 9; // width of a block
+int bh = 12; // height of a block
+int s = bw - 1; // shift factor to start from right (Arabic is right to left)

@@ -1,31 +1,27 @@
-void showFGrid() {
+void showCGrid() {
   
-  for (int i = margin; i <= height; i += (blockRealSize * blockH)) {
+  for (int i = m; i <= height; i += (brs * bh)) {
     stroke(255, 30.0);
     strokeWeight(3);
-    line(margin, i, width - margin, i);
+    line(m, i, width - m, i);
   }
-   for (int j = margin; j <= width; j += (blockRealSize * blockW)) {
+   for (int j = m; j <= width; j += (brs * bw)) {
     stroke(255, 30.0);
     strokeWeight(3);
-    line(j, margin, j, height - margin);
+    line(j, m, j, height - m);
   }
 }
 
 
-void showLGrid(boolean full) {
-  if (full) {
-      for (int i = margin; i <= height - margin; i += blockRealSize) {
+void showLGrid() {
+      for (int i = m; i <= height - m; i += brs) {
       stroke(255, 30.0);
       strokeWeight(1);
-      line(margin, i, width - margin, i);
+      line(m, i, width - m, i);
     }
-     for (int j = margin; j <= width - margin; j += blockRealSize) {
+     for (int j = m; j <= width - m; j += brs) {
       stroke(255, 30.0);
       strokeWeight(1);
-      line(j, margin, j, height - margin);
-    }
-  }
-  
-  
+      line(j, m, j, height - m);
+    } 
 }
