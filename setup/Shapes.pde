@@ -79,11 +79,66 @@ void ha3(int x, int y) {
 
 
 
+void beg_ba(int x, int y) {
+  horLine(x, y, 1, 7, 7);
+}
+
+void cont_ba(int x, int y) {
+  horLine(x, y, 1, 7, 7);
+}
+
+
+void sep_ba(int x, int y) {
+   horLine(x, y, 1, 7, 7);
+}
+
+void beg_ba_nnn(int x, int y) {
+  horLine(x, y, 1, 7, 7);
+}
+
+void cont_ba_nnn(int x, int y) {
+  horLine(x, y, 1, 7, 7);
+}
+
+
+void sep_ba_nnn(int x, int y) {
+   horLine(x, y, 1, 7, 7);
+}
+
+
+void beg_ta(int x, int y) {
+  horLine(x, y, 1, 7, 7);
+}
+
+void cont_ta(int x, int y) {
+  horLine(x, y, 1, 7, 7);
+}
+
+
+void sep_ta(int x, int y) {
+ horLine(x, y, 1, 7, 7);
+}
+
+void mar_ta(int x, int y) {
+  horLine(x, y, 1, 7, 7);
+}
+
+void beg_tha(int x, int y) {
+  horLine(x, y, 1, 7, 7);
+}
+
+void cont_tha(int x, int y) {
+  horLine(x, y, 1, 7, 7);
+}
+
+
+void sep_tha(int x, int y) {
+ horLine(x, y, 1, 7, 7);
+}
+
 
 void line2() {
-   for(int i = 8; i >= 1; --i) {
-    horLine(i, 2, 1, 7, 7);
-  }
+
    for(int i = 8; i >= 1; --i) {
     horLine(i, 2, 1, 7, 7);
   }
@@ -96,12 +151,11 @@ void line2() {
   }
 
   //1
-  verLine(11, 2, 4, 1, 7);
+  
   //2
-  verLine(10, 2, 4, 1, 6);
-  horLine(10, 2, 1, 7, 4);
+
   //3
-  ya(9,2);  
+   
   //4
   verLine(8, 2, 1, 5, 2);
   //5
