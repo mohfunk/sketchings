@@ -18,6 +18,17 @@ void draw () {
   cont_alef_hamza(10, 1);
   sep_hamza(11, 1);
   //2
+  beg_ta(1,2);
+  mar_ta(2,2);
+  sep_ta(3,2);
+  cont_ta(4,2);
+  beg_ta(5,2);
+  sep_ba(6,2);
+  cont_ba(7,2);
+  beg_ba(8,2);
+  maq_alef(9,2);
+  cont_alef(10,2);
+  sep_alef(11,2);
 
   // 5-> 1 partial
   for (int i = 6; i > 2; --i) {

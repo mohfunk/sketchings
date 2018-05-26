@@ -10,12 +10,15 @@ void block(int x, int y, int sx, int sy) {
 }
 
 
+
 void horLine(int x, int y, int sx, int sy, int len) {
 	for(int i = 0; i < len; ++i) {
 		block(x,y, sx + i, sy);
 	}
 
 }
+
+
 
 void verLine(int x, int y, int sx, int sy, int len) {
 	for(int i = 0; i < len; ++i) {
@@ -25,11 +28,13 @@ void verLine(int x, int y, int sx, int sy, int len) {
 }
 
 
+
 void diaLine(int x, int y, int sx, int sy, int len, int ori) {
 	for(int i = 0; i < len; ++i) {
 		block(x,y, sx + i, sy + i * ori);
 	}
 }
+
 
 
 void zHorLine(int x, int y, int sx, int sy, int ori) {
@@ -38,12 +43,13 @@ void zHorLine(int x, int y, int sx, int sy, int ori) {
 	block(x,y,sx + 2,sy);
 }
 
+
+
 void zVerLine(int x, int y, int sx, int sy, int ori) {
 	block(x,y,sx,sy);
 	block(x,y,sx + (1 * ori),sy + 1);
 	block(x,y,sx,sy + 2);
 }
-
 
 
 
@@ -79,107 +85,7 @@ void ha3(int x, int y) {
 
 
 
-void beg_ba(int x, int y) {
-  horLine(x, y, 1, 7, 7);
-}
 
-void cont_ba(int x, int y) {
-  horLine(x, y, 1, 7, 7);
-}
-
-
-void sep_ba(int x, int y) {
-   horLine(x, y, 1, 7, 7);
-}
-
-void beg_ba_nnn(int x, int y) {
-  horLine(x, y, 1, 7, 7);
-}
-
-void cont_ba_nnn(int x, int y) {
-  horLine(x, y, 1, 7, 7);
-}
-
-
-void sep_ba_nnn(int x, int y) {
-   horLine(x, y, 1, 7, 7);
-}
-
-
-void beg_ta(int x, int y) {
-  horLine(x, y, 1, 7, 7);
-}
-
-void cont_ta(int x, int y) {
-  horLine(x, y, 1, 7, 7);
-}
-
-
-void sep_ta(int x, int y) {
- horLine(x, y, 1, 7, 7);
-}
-
-void mar_ta(int x, int y) {
-  horLine(x, y, 1, 7, 7);
-}
-
-void beg_tha(int x, int y) {
-  horLine(x, y, 1, 7, 7);
-}
-
-void cont_tha(int x, int y) {
-  horLine(x, y, 1, 7, 7);
-}
-
-
-void sep_tha(int x, int y) {
- horLine(x, y, 1, 7, 7);
-}
-
-
-void line2() {
-
-   for(int i = 8; i >= 1; --i) {
-    horLine(i, 2, 1, 7, 7);
-  }
-     for(int i = 5; i > 2; --i) {
-       block(i, 2, 3, 3);
-       block(i, 2, 5, 3);
-  }
-     for(int i = 8; i > 5; --i) {
-       block(i, 2, 4, 9);
-  }
-
-  //1
-  
-  //2
-
-  //3
-   
-  //4
-  verLine(8, 2, 1, 5, 2);
-  //5
-  verLine(7, 2, 4, 5, 2);
-  //6
-  verLine(6, 2, 1, 5, 2);
-  verLine(6, 2, 7, 5, 2);
-  //7
-  verLine(5, 2, 1, 5, 2);
-  //8
-  verLine(4, 2, 4, 5, 2);
-  //9
-  verLine(3, 2, 1, 5, 2);
-  verLine(3, 2, 7, 5, 2);
-  //10
-  verLine(2,2,2,1,6);
-  diaLine(2,2,3,2,5,1);
-  block(2, 2, 5, 1);
-  block(2, 2, 7, 1);
-  //11
-  verLine(1, 2, 1, 5, 2);
-  verLine(1, 2, 7, 5, 2);
-  zHorLine(1,2,3,3,-1);
-}
 
 void line3() {
     /* Line 3 */

@@ -5,6 +5,17 @@ void ya_hamza_nn(int x, int y) {
   
 }
 
+
+void beg_ya(int x, int y) {
+  
+  verLine(x, y, 1, 5, 2);
+}
+
+void cont_ya(int x, int y) {
+ 
+  verLine(x, y, 4, 5, 2);
+}
+
 void ya(int x, int y) {
   horLine(x, y, 4, 10, 4);
   verLine(x, y, 7, 7, 3);
