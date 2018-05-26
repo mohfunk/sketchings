@@ -41,6 +41,11 @@ void draw () {
   cont_kha(3,3);
   sep_kha(2,3);
   end_kha(1,3);
+  // 4
+  sep_da(11,4);
+  con_da(10,4);
+  sep_dta(9,4);
+  con_dta(8,4);
 
   // 5-> 1 partial
   for (int i = 6; i > 2; --i) {
@@ -115,20 +120,7 @@ void draw () {
 
 
   /*
-// (11, 4) 
-   diaLine(11, 4, 2, 7, 3, 1, -1);
-   horLine(11, 4, 2, 8, 5, 1, 0);
-   // (11, 4) 
-   diaLine(10, 4, 2, 7, 3, 1, -1);
-   horLine(10, 4, 1, 8, 6, 1, 0);
-   // (11, 4) 
-   diaLine(9, 4, 2, 7, 3, 1, -1);
-   horLine(9, 4, 2, 8, 5, 1, 0);
-   block(9, 4, 4,3);
-   // (11, 4) 
-   diaLine(8, 4, 2, 7, 3, 1, -1);
-   horLine(8, 4, 1, 8, 6, 1, 0);
-   block(8, 4, 4, 3);
+
    
    
    
