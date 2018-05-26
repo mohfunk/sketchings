@@ -3,8 +3,8 @@ void draw () {
 
   
   // for tweeking
-   showCGrid();
-   showLGrid();
+   //showCGrid();
+   //showLGrid();
    
   /* Line 1 */ 
   //1
@@ -48,7 +48,7 @@ void draw () {
   
   
   /* Line 2 */ 
-   // 8 -> 1 partial
+   // partial
    for(int i = 8; i >= 1; --i) {
     horLine(i, 2, 1, 7, 7);
   }
@@ -97,8 +97,34 @@ void draw () {
   verLine(1, 2, 7, 5, 2);
   zHorLine(1,2,3,3,-1);
   
+    /* Line 3 */
+   for(int i = 11; i >= 10; --i) {
+    horLine(i, 3, 1, 7, 7);
+  }
   
-  
+  verLine(11, 3, 4, 5, 2);
+  zHorLine(10,3,3,3,-1);
+  //6
+  verLine(10, 3, 1, 5, 2);
+  verLine(10, 3, 7, 5, 2);
+  zHorLine(11,3,3,3,-1);
+    ha1(2,3);
+    block(2, 3, 5, 1);
+    ha2(1,3);
+    block(1, 3, 5, 1);
+    ha3(3,3);
+    block(3, 3, 4, 3);
+    
+    ha1(5,3);
+    ha2(4,3);
+    ha3(6,3);
+    
+    ha1(8,3);
+    block(8, 3, 4, 7);
+    ha2(7,3);
+    block(7, 3, 4, 7);
+    ha3(9,3);
+    block(9, 3, 4, 9);
 /*
     // 5
  
