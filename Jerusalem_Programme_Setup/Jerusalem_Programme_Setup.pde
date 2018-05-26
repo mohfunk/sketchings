@@ -6,7 +6,7 @@ Copyright (c) 2018 Mohammed Fahad - OSI/MIT license (http://recodeproject/licens
 */
 
 void setup() {
-  size(1010, 1340, P2D); 
-  background(0);
+  size(505, 670, P2D); 
+  background(10);
   noLoop();
 }
