@@ -3,8 +3,8 @@ void draw () {
 
   
   // for tweeking
-   showFGrid();
-   showLGrid(true);
+   //showFGrid();
+   //showLGrid(true);
    
   /* Line 1 */ 
   // 11
@@ -45,6 +45,12 @@ void draw () {
   hamza(1, 1, 1, 1);
   wa(1,1);
   
+  
+  
+  // ******************** //
+  
+  
+  
   /* Line 2 */ 
 
    // 11
@@ -53,7 +59,14 @@ void draw () {
   lLine(10, 2, 4, 1, 6, 0, 1);
   lLine(10, 2, 1, 7, 4, 1, 0);
   // 9
-  ya(9, 2);
+   lLine(9, 2, 4, 10, 4, 1, 0);
+   lLine(9, 2, 7, 7, 3, 0, 1);
+   lLine(9, 2, 2, 5, 3, 1, 0);
+   lDot(9, 2, 6, 6);
+   lDot(9, 2, 4, 6);
+   lDot(9, 2, 2, 6);
+   lDot(9, 2, 1, 7);
+   tBlocksVer(9, 2, 4, 9, -1);
   // 8 -> 1 partial
    for(int i = 8; i >= 1; --i) {
     lLine(i, 2, 1, 7, 7, 1, 0);
@@ -80,16 +93,16 @@ void draw () {
 
     // 5
   lLine(5, 2, 1, 5, 2, 0, 1);
-  lDot(5, 2, 3, 9);
-  lDot(5, 2, 5, 9);
+  lDot(5, 2, 3, 3);
+  lDot(5, 2, 5, 3 );
   // 4
   lLine(4, 2, 4, 5, 2, 0, 1);
-  lDot(4, 2, 3, 9);
-  lDot(4, 2, 5, 9);
+  lDot(4, 2, 3, 3);
+  lDot(4, 2, 5, 3);
   // 3
   lLine(3, 2, 1, 5, 2, 0, 1);
-  lDot(3, 2, 3, 9);
-  lDot(3, 2, 5, 9);
+  lDot(3, 2, 3, 3);
+  lDot(3, 2, 5, 3);
   lLine(3, 2, 7, 5, 2, 0, 1);
   
         // 5-> 1 partial
@@ -119,9 +132,26 @@ void draw () {
   }
   
       // 5-> 1 partial
-   for(int i = 9; i > 6; --i) {
+   for(int i = 8; i >= 7; --i) {
     lLine(i, 8, 1, 7, 7, 1, 0);
   }
+    // 4
+  lLine(7, 8, 4, 5, 2, 0, 1);
+  lDot(8, 8, 3, 9);
+  lDot(8, 8, 5, 9);
+  // 3
+  lLine(8, 8, 1, 5, 2, 0, 1);
+  lDot(7, 8, 3, 9);
+  lDot(7, 8, 5, 9);
+  lLine(8, 8, 7, 5, 2, 0, 1);
+  
+  ya(6,8);
+  wa(11,8);
+  wa(10, 8);
+ lLine(10, 8, 5, 1, 7, 0, 1);
+ lLine(9, 8, 1, 1, 6, 0, 1);
+ lLine(9, 8, 4, 1, 6, 0, 1);
+ lLine(9, 8, 1, 7, 6, 1, 0);
   
     // 5-> 1 partial
    for(int i = 5; i >= 1; --i) {
@@ -162,11 +192,7 @@ void draw () {
  lLine(8, 4, 1, 8, 6, 1, 0);
   lDot(8, 4, 4, 3);
 
- //dLine(10, 5, 1, 7, 4, 1, -1);
- tBlocksHor(6, 7, 1, 2, 1);
- tBlocksVer(1, 7, 1, 2, 1);
- tBlocksHor(9, 7, 1, 2, -1);
- tBlocksVer(3, 7, 1, 2, -1);
+
  
  // (11, 10) 1
  lLine(11, 10, 4, 1, 7, 0, 1);
