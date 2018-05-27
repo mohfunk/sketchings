@@ -55,6 +55,10 @@ void draw () {
   con_dal(10,4);
   sep_dal(11,4);
   //5
+  end_ain(1,5);
+  sep_ain(2,5);
+  con_ain(3,5);
+  beg_ain(4,5);
   tda(5,5);
   tta(6,5);
   sep_dad(7,5);
@@ -63,7 +67,9 @@ void draw () {
   beg_sad(10,5);
   sep_shn(11,5);
  
-
+  //6
+  con_gin(10,6);
+  beg_gin(11,6);
 
 
   // 5-> 1 partial
