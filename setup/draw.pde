@@ -68,14 +68,13 @@ void draw () {
   sep_shn(11,5);
  
   //6
+  end_gin(8, 6);
+  sep_gin(9, 6);
   con_gin(10,6);
   beg_gin(11,6);
 
 
-  // 5-> 1 partial
-  for (int i = 7; i >= 1; --i) {
-    horLine(i, 6, 1, 7, 7);
-  }
+
   // 5-> 1 partial
   for (int i = 11; i > 9; --i) {
     horLine(i, 7, 1, 7, 7);

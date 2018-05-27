@@ -353,7 +353,7 @@ void tda(int x, int y) {
 }
 
 void seb_abs_ain(int x, int y) {
-  block(x,y,4,4);
+  // block(x,y,4,4);
   diaLine(x,y,5,4,3,1);
   block(x,y,7,7);
   diaLine(x,y,5,10,3,-1);
@@ -362,22 +362,31 @@ void seb_abs_ain(int x, int y) {
 }
 
 void end_abs_ain(int x, int y) {
-  block(x,y,4,4);
-  diaLine(x,y,5,4,3,1);
+  block(x,y,3,4);
+  block(x,y,7,6);
   block(x,y,7,7);
   diaLine(x,y,5,10,3,-1);
   block(x,y,4,10);
-  diaLine(x,y,1,7,3,-1);
+  block(x, y, 2, 6);
+  block(x, y, 1, 7);
   diaLine(x,y,2,9,2,1);
   
 }
-
+void seb_ain_h(int x, int y) {
+  horLine(x, y, 3, 3, 3);
+  horLine(x, y, 3, 5, 4); 
+   block(x, y, 5, 3);
+   block(x, y, 5, 4);
+}
 void sep_ain(int x, int y) {
   seb_abs_ain(x,y);
+  seb_ain_h(x, y);
 }
 
 void end_ain(int x, int y) {
   end_abs_ain(x,y);
+  seb_ain_h(x, y);
+  
 }
 void beg_abs_ain(int x, int y) {
   horLine(x, y, 1, 7, 7);
@@ -398,6 +407,18 @@ void con_ain(int x, int y) {
   block(x,y,5,6);
   block(x, y, 6, 5);
   
+}
+
+void sep_gin(int x, int y) {
+  sep_ain(x, y);
+  block(x, y, 4, 1);
+}
+
+void end_gin(int x, int y) {
+  end_ain(x, y);
+  block(x, y, 4, 1);
+  
+
 }
 
 void beg_gin(int x, int y) {
