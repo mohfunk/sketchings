@@ -6,14 +6,16 @@ Copyright (c) 2018 Mohammed Fahad - OSI/MIT license (http://recodeproject/licens
 */
 
 
-int m = 5; // margin
-int bds = 3; // draw block size
-int brs = 5; // real block size
+int m = 10; // margin
+int bds = 7; // draw block size
+int brs = 10; // real block size
 int bw = 9; // width of a block
 int bh = 12; // height of a block
 int s = bw - 1; // shift factor to start from right (Arabic is right to left)
 void setup() {
-  size(505, 670, P2D); 
+  size(1010, 1340, P2D); 
   background(10);
+  stroke(255, 10.0);
+  strokeWeight(1);
   noLoop();
 }

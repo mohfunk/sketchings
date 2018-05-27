@@ -1,3 +1,25 @@
+void showCGrid() {
+  
+  for (int i = m; i <= height; i += (brs * bh)) {
+    line(m, i, width - m, i);
+  }
+   for (int j = m; j <= width; j += (brs * bw)) {
+
+    line(j, m, j, height - m);
+  }
+}
+
+void showLGrid() {
+      for (int i = m; i <= height - m; i += brs) {
+
+      line(m, i, width - m, i);
+    }
+     for (int j = m; j <= width - m; j += brs) {
+      line(j, m, j, height - m);
+    } 
+}
+
+
 void block(int x, int y, int sx, int sy) {
 	noFill();
 	stroke(255);

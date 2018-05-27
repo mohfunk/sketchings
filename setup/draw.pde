@@ -5,52 +5,66 @@ void draw () {
   // for tweeking
   showCGrid();
   showLGrid();
+
   //1
-  wa_hamza(1, 1);
-  ya_hamza_nn(2, 1);
-  mid_alef_hamza(3, 1);
-  beg_alef_hamza(4, 1);
-  sep_alef_hamza_ksr(5, 1);
-  sep_alef_hamza(6, 1);
-  cont_alef_s(7, 1);
-  sep_alef_s(8, 1);
-  cont_alef_hamza_ksr(9, 1);
-  cont_alef_hamza(10, 1);
-  sep_hamza(11, 1);
+  waw_hmz(1, 1);
+  yaa_hmz_nn(2, 1);
+  mid_alf_hmz(3, 1);
+  beg_alf_hmz(4, 1);
+  sep_alf_hmz_ksr(5, 1);
+  sep_alf_hmz(6, 1);
+  con_alf_s(7, 1);
+  sep_alf_s(8, 1);
+  con_alf_hmz_ksr(9, 1);
+  con_alf_hmz(10, 1);
+  sep_hmz(11, 1);
   //2
   beg_tha(1,2);
-  mar_ta(2,2);
-  sep_ta(3,2);
-  cont_ta(4,2);
-  beg_ta(5,2);
-  sep_ba(6,2);
-  cont_ba(7,2);
-  beg_ba(8,2);
-  maq_alef(9,2);
-  cont_alef(10,2);
-  sep_alef(11,2);
+  mar_taa(2,2);
+  sep_taa(3,2);
+  con_taa(4,2);
+  beg_taa(5,2);
+  sep_baa(6,2);
+  con_baa(7,2);
+  beg_baa(8,2);
+  maq_alf(9,2);
+  con_alf(10,2);
+  sep_alf(11,2);
   // 3
   sep_tha(10,3);
-  cont_tha(11,3);
-  cont_ja(9,3);
-  sep_ja(8,3);
-  end_ja(7,3);
-  cont_ha(6,3);
-  sep_ha(5,3);
-  end_ha(4,3);
-  cont_kha(3,3);
+  con_tha(11,3);
+  con_jem(9,3);
+  sep_jem(8,3);
+  end_jem(7,3);
+  con_haa(6,3);
+  sep_haa(5,3);
+  end_haa(4,3);
+  con_kha(3,3);
   sep_kha(2,3);
   end_kha(1,3);
   // 4
-  sep_da(11,4);
-  con_da(10,4);
-  sep_dta(9,4);
+  beg_shn(1,4);
+  sep_sen(2,4);
+  beg_sen(3,4);
+  zaa_alf(4,4);
+  zaa(5,4);
+  raa_alf(6,4);
+  raa(7,4);
   con_dta(8,4);
+  sep_dta(9,4);
+  con_dal(10,4);
+  sep_dal(11,4);
+  //5
+  tda(5,5);
+  tta(6,5);
+  sep_dad(7,5);
+  beg_dad(8,5);
+  sep_sad(9,5);
+  beg_sad(10,5);
+  sep_shn(11,5);
+ 
 
-  // 5-> 1 partial
-  for (int i = 6; i > 2; --i) {
-    horLine(i, 5, 1, 7, 7);
-  }
+
 
   // 5-> 1 partial
   for (int i = 7; i >= 1; --i) {
@@ -88,9 +102,9 @@ void draw () {
   verLine(8, 8, 7, 5, 2);
 
 
-  ya(6, 8);
-  wa(11, 8);
-  wa(10, 8);
+  yaa(6, 8);
+  waw(11, 8);
+  waw(10, 8);
   verLine(10, 8, 5, 1, 7);
   verLine(9, 8, 1, 1, 6);
   verLine(9, 8, 4, 1, 6);
