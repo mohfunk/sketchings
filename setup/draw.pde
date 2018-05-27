@@ -66,76 +66,60 @@ void draw () {
   sep_sad(9,5);
   beg_sad(10,5);
   sep_shn(11,5);
- 
   //6
+  kaf(1, 6);
+  sep_qaa(2, 6);
+  con_qaa(3, 6);
+  beg_qaa(4, 6);
+  sep_faa(5, 6);
+  con_faa(6, 6);
+  beg_faa(7, 6);
   end_gin(8, 6);
   sep_gin(9, 6);
   con_gin(10,6);
   beg_gin(11,6);
-
-
-
-  // 5-> 1 partial
-  for (int i = 11; i > 9; --i) {
-    horLine(i, 7, 1, 7, 7);
-  }
-  // 5-> 1 partial
-  for (int i = 8; i > 6; --i) {
-    horLine(i, 7, 1, 7, 7);
-  }
-  // 5-> 1 partial
-  for (int i = 5; i > 3; --i) {
-    horLine(i, 7, 1, 7, 7);
-  }
-  // 5-> 1 partial
-  for (int i = 2; i >= 1; --i) {
-    horLine(i, 7, 1, 7, 7);
-  }
-
-  // 5-> 1 partial
-  for (int i = 8; i >= 7; --i) {
-    horLine(i, 8, 1, 7, 7);
-  }
-  // 4
-  verLine(7, 8, 4, 5, 2);
-  block(8, 8, 3, 9);
-  block(8, 8, 5, 9);
-  // 3
-  verLine(8, 8, 1, 5, 2);
-  block(7, 8, 3, 9);
-  block(7, 8, 5, 9);
-  verLine(8, 8, 7, 5, 2);
-
-
+  // 7
+  end_hha(1, 7);
+  mid_hha(2, 7);
+  end_non(3, 7);
+  mid_non(4, 7);
+  beg_non(5, 7);
+  end_mem(6, 7);
+  mid_mem(7, 7);
+  beg_mem(8, 7);
+  end_lam(9, 7);
+  mid_lam(10, 7);
+  beg_lam(11, 7);
+  // 8
+  con_gin_nnn(1,8);
+  beg_gin_nnn(2,8);
+  sep_baa_nnn(3,8);
+  con_baa_nnn(4,8);
+  beg_baa_nnn(5,8);
   yaa(6, 8);
+  con_yaa(7, 8);
+  beg_yaa(8,8);
+  lam_alf(9,8);
+  waw_alf(10, 8);
   waw(11, 8);
-  waw(10, 8);
-  verLine(10, 8, 5, 1, 7);
-  verLine(9, 8, 1, 1, 6);
-  verLine(9, 8, 4, 1, 6);
-  horLine(9, 8, 1, 7, 6);
+  // 9
+  qus(1, 9);
+  acs(2, 9);
+  vod(3, 9);
+  cln(4, 9);
+  cma(5, 9);
+  per(6, 9);
+  sep_qaa_nnn(7, 9);
+  con_qaa_nnn(8, 9);
+  beg_qaa_nnn(9, 9);
+  end_gin_nnn(10, 9);
+  sep_gin_nnn(11, 9);
 
-  // 5-> 1 partial
-  for (int i = 5; i >= 1; --i) {
-    horLine(i, 8, 1, 7, 7);
-  }
+  
+  
+  
 
-  // 5
-  verLine(5, 8, 1, 5, 2);
-  block(5, 8, 3, 9);
-  block(5, 8, 4, 10);
-  block(5, 8, 5, 9);
-  // 4
-  verLine(4, 8, 4, 5, 2);
-  block(4, 8, 3, 9);
-  block(4, 8, 4, 10);
-  block(4, 8, 5, 9);
-  // 3
-  verLine(3, 8, 1, 5, 2);
-  block(3, 8, 3, 9);
-  block(3, 8, 4, 10);
-  block(3, 8, 5, 9);
-  verLine(3, 8, 7, 5, 2);
+
 
   //10
   fbl(1, 10);
