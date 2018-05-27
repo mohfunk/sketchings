@@ -2,10 +2,6 @@
 void draw () {
 
 
-  // for tweeking
-  showCGrid();
-  showLGrid();
-
   //1
   waw_hmz(1, 1);
   yaa_hmz_nn(2, 1);
