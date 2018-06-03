@@ -1,2 +1,3 @@
 # AudioVisualizer
-Playing with Audio
+
+![](README/s.gif)
