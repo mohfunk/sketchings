@@ -17,4 +17,9 @@ float q = (2*phi) + 1;
 int wid5 = 0;
 
 Pentagram pent;
+Pentagram pent1;
+Pentagram pent2;
+Pentagram pent3;
+Pentagram pent4;
+Pentagram pent5;
 boolean debug = true;

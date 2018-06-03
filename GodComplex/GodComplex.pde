@@ -6,14 +6,21 @@ void setup()
    fullScreen(P3D);
    frameRate(60);
    minim = new Minim(this);
-   s = minim.loadFile("GC.mp3" );
+   s = minim.loadFile("GCC.mp3" );
    fft = new FFT(s.bufferSize(), s.sampleRate());
    s.loop(0);
    f = createFont("FuturaPT-Book", 24, true);
    wid5 = (width/10) - 10;
    smooth(4);
    pent = new Pentagram(3, 100);
-   // pent.shftPentagram(-500, -500);
+   pent1 = new Pentagram(3, 100);
+   pent2 = new Pentagram(3, 100);
+   pent3 = new Pentagram(3, 100);
+   pent4 = new Pentagram(3, 100);
+   pent5 = new Pentagram(3, 100);
+   pent2.scalPentagram(20);
+   pent3.scalPentagram(50);
+   pent4.scalPentagram(100);
   }
 
 
@@ -56,7 +63,10 @@ if (debug == true) {
 }
 
   
-  pent.drawPentagram(scor);
+  pent.drawPentagram(scor, 5, 0);
+  pent2.drawPentagram(scor, 10, 4);
+  pent3.drawPentagram(scor, 30, 7);
+  pent4.drawPentagram(scor, 50, 9);
 
  
 }
