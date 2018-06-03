@@ -57,9 +57,10 @@ class Pentagram {
   
   void drawPentagram(float[] arr, int alpha, int weight) {
     if ( weight >= 7) {
-     strokeWeight( (int)arr[weight]/10);
+     strokeWeight( (int)arr[weight]/30);
     } else {
      strokeWeight( (int)arr[weight]/100);
+    }
      // A -> B
      stroke(random(1,255), 70, (int)arr[0], (int)arr[2]/alpha);
      line(this.xPoints[0], this.yPoints[0], this.xPoints[1], this.yPoints[1]);

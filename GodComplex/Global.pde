@@ -1,11 +1,12 @@
 import ddf.minim.*;
 import ddf.minim.analysis.*;
-
-
 Minim minim;
-AudioPlayer s;
-FFT fft;
 
+int songs = 3;
+AudioPlayer[] s = new AudioPlayer[songs];
+FFT[] fft = new FFT[songs];
+String[] songname = { "ds.mp3", "GCC.mp3", "td.mp3" };
+int snum = 1;
 float[] spec = { 0.010, 0.035, 0.060, 0.120, 0.240, 0.360, 0.480, 0.650, 0.820, 1.000 };
 float[] scor = { 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000 }; 
 float[] prev = { 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000 };
