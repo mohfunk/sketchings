@@ -4,67 +4,38 @@
 void setup() 
   {
    fullScreen(P3D);
+   //size(1000,1000, P3D);
    frameRate(60);
    minim = new Minim(this);
    loadSong(snum);
    f = createFont("FuturaPT-Book", 24, true);
    wid5 = (width/10) - 10;
    smooth(4);
-   pent = new Pentagram(3, 100);
-   pent1 = new Pentagram(3, 100);
-   pent2 = new Pentagram(3, 100);
-   pent3 = new Pentagram(3, 100);
-   pent4 = new Pentagram(3, 100);
-   pent5 = new Pentagram(3, 100);
-   pent2.scalPentagram(10);
-   pent3.scalPentagram((int)(30));
-   pent4.scalPentagram((int)(100));
+   for(int i = 0; i < pentnum; ++i) {
+    pnt[i] = new Pentagram(3, 100); 
+    pnt[i].scalPentagram(penScale[i]);
+   }
   }
 
 
 
 void draw() {
-    textFont(f);
+    
     int frames = 60 * 3;
     float time = (float)frameCount / frames;
-    fft[snum].forward(s[snum].mix);
-    stroke(255);
-    strokeWeight(1);
-    strokeJoin(MITER);
-     for(int i = 0; i < 10; ++i) {
- 	      prev[i] = scor[i];
-	      scor[i] = 0.00;
-	    }
-  for(int i = 0; i < fft[snum].specSize()*spec[0]; i++)
-  {
-    scor[0] += fft[snum].getBand(i);
-  }
-   if (prev[0] > scor[0]) {
-    scor[0] = prev[0] - decrate[0];
-  }
-  
-  for(int i = 0; i < 9; ++i) {
-    for(int j = (int)(fft[snum].specSize()*spec[i]); j < fft[snum].specSize()*spec[i+1]; j++) {
-      scor[i+1] += fft[snum].getBand(j);
-    }
-        if (prev[i+1] > scor[i+1]) {
-    scor[i+1] = prev[i+1] - decrate[i+1];
-  }
-  }
-    
+    updateScore();
     background(scor[6]/20, scor[2]/50, scor[8]/20);
 if (debug == true) {
-   for(int i = 0; i < 10; ++i) {
-     line(wid5 * (i+1), height, wid5 * (i+1), height - scor[i]/2);
-     text("sc: " + (int)scor[i], (wid5* (i+1)) - 150, height - 50);
-  }
+   deb();
 }
 
-  
-  pent.drawPentagram(scor, 5, 0);
-  pent2.drawPentagram(scor, 40, 6);
-  pent3.drawPentagram(scor, 50, 8);
-  pent4.drawPentagram(scor, 70, 7);
+  //perspective(1, 1, 0.1, 100);
+  camera((width/2) + scor[5]/5, (height/2) + scor[9]/60, height,  (width/2) - scor[7]/100, (height/2) - scor[4]/100, 62,  0, 1, 0);
+  //rotateY(radians(60 + sin(phi) * 10));
+  //rotateZ(radians(40 + sin(phi * 2) * 6));
+  for(int i = 0; i < pentnum; ++i) {
+    pnt[i].drawPentagram(scor,penAlpha[i], penWidth[i]);
+   }
 
  
 }

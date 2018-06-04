@@ -57,24 +57,24 @@ class Pentagram {
   
   void drawPentagram(float[] arr, int alpha, int weight) {
     if ( weight >= 7) {
-     strokeWeight( (int)arr[weight]/30);
+     strokeWeight( (int)arr[weight]/15);
     } else {
-     strokeWeight( (int)arr[weight]/100);
+     strokeWeight( (int)arr[weight]/20);
     }
      // A -> B
-     stroke(random(1,255), 70, (int)arr[0], (int)arr[2]/alpha);
+     stroke(random(1,255), 70, (int)arr[(int)random(0,9)], (int)arr[(int)random(0,9)]/alpha);
      line(this.xPoints[0], this.yPoints[0], this.xPoints[1], this.yPoints[1]);
      // B -> D
-     stroke(random(1,255), 70, (int)arr[4], (int)arr[1]/alpha);
+     stroke(random(1,255), 70, (int)arr[(int)random(0,9)], (int)arr[(int)random(0,9)]/alpha);
      line(this.xPoints[1], this.yPoints[1], this.xPoints[4], this.yPoints[4]);
      // D -> H
-     stroke(random(1,255), 70, (int)arr[3], (int)arr[2]/alpha);
+     stroke(random(1,255), 70, (int)arr[(int)random(0,9)], (int)arr[(int)random(0,9)]/alpha);
      line(this.xPoints[4], this.yPoints[4], this.xPoints[2], this.yPoints[2]);
      // H -> C
-     stroke(random(1,255), 70, (int)arr[2], (int)arr[5]/alpha);
+     stroke(random(1,255), 70, (int)arr[(int)random(0,9)], (int)arr[(int)random(0,9)]/alpha);
      line(this.xPoints[2], this.yPoints[2], this.xPoints[3], this.yPoints[3]);
      // C -> A
-     stroke(random(1,255), 70, (int)arr[1], (int)arr[3]/alpha);
+     stroke(random(1,255), 70, (int)arr[(int)random(0,9)], (int)arr[(int)random(0,9)]/alpha);
      line(this.xPoints[3], this.yPoints[3], this.xPoints[0], this.yPoints[0]);
     
   }

@@ -13,6 +13,11 @@ void keyPressed() {
   if (key == 'r') {
     s[snum].rewind();
   }
+  // Toggle Debug
+  if (key == 'd') {
+    if (debug == true) debug = false;
+    else debug = true;
+  }
   
   // Mute
   if (key == 'm') {
