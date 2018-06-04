@@ -3,8 +3,8 @@
 
 void setup() 
   {
-   fullScreen(P3D);
-   //size(1000,1000, P3D);
+    fullScreen(P3D);
+  // size(1000,1000, P3D);
    frameRate(60);
    minim = new Minim(this);
    loadSong(snum);
@@ -12,8 +12,10 @@ void setup()
    wid5 = (width/10) - 10;
    smooth(4);
    for(int i = 0; i < pentnum; ++i) {
-    pnt[i] = new Pentagram(3, 100); 
-    pnt[i].scalPentagram(penScale[i]);
+    rct[i] = new Rectangle((width/2), (height/2), 100, 100); 
+    rct[i].scalRectangle(recScale[i]);
+    rct[i].shftRectangle((-1) * (int)(rct[i].wid/2),(-1) * (int)(rct[i].hei/2));
+    rct[i].scalRectangle(recScale[(int)random(0,9)], recScale[(int)random(0,9)]);
    }
   }
 
@@ -30,11 +32,14 @@ if (debug == true) {
 }
 
   //perspective(1, 1, 0.1, 100);
-  camera((width/2) + scor[5]/5, (height/2) + scor[9]/60, height,  (width/2) - scor[7]/100, (height/2) - scor[4]/100, 62,  0, 1, 0);
-  //rotateY(radians(60 + sin(phi) * 10));
+  
+ // camera(((width/2) + scor[5]/5) * 1, ((height/2) + scor[9]/60) * 1, height * 1,
+  //(width/2) - scor[7]/100, (height/2) - scor[4]/100, 62,
+ // 0, 1, 0);
+  //rotateX(radians(scor[3]/5 + sin(PI) * 10));
   //rotateZ(radians(40 + sin(phi * 2) * 6));
   for(int i = 0; i < pentnum; ++i) {
-    pnt[i].drawPentagram(scor,penAlpha[i], penWidth[i]);
+    rct[i].drawRectangle(scor,recAlpha[i], penWidth[i], i, i);
    }
 
  
