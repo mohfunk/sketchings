@@ -8,6 +8,8 @@ class Head {
   int eyedistance;
   int neckWid;
   int neckHei;
+  int nosey;
+  int mouthy;
   Head() {
     this.x = 0;
     this.y = 0;
@@ -16,18 +18,16 @@ class Head {
   }
   
   void reset() {
-    int c = (int)random(0,4);
+    int c = (int)random(0,23);
     this.r = skinTr[c];
     this.g = skinTg[c];
     this.b = skinTb[c];
     float wei_seed = random(1);
-    if (wei_seed <  0.1                  ) { this.wid = 3; this.eyedistance = 2; this.neckWid = 1;}
-    if (wei_seed >= 0.1 && wei_seed < 0.6) { this.wid = 4; this.eyedistance = 2; this.neckWid = (int)random(1,2);}
-    if (wei_seed >= 0.6 && wei_seed < 0.9) { this.wid = 5; this.eyedistance = 3; this.neckWid = (int)random(1,3);}
-    if (wei_seed >= 0.9 && wei_seed < 1.0) { this.wid = 6; this.eyedistance = 3; this.neckWid = (int)random(1,4);}
+    if (wei_seed < 0.6) { this.wid = 4; this.eyedistance = 2; this.neckWid = 2;}
+    if (wei_seed >= 0.6 && wei_seed < 0.9) { this.wid = 5; this.eyedistance = 3; this.neckWid = (int)random(2,3);}
+    if (wei_seed >= 0.9 && wei_seed < 1.0) { this.wid = 6; this.eyedistance = 3; this.neckWid = (int)random(3,4);}
     float hei_seed = random(1);
-    if (hei_seed <  0.1                  ) { this.hei = 6; }
-    if (hei_seed >= 0.1 && hei_seed < 0.6) { this.hei = 7; }
+    if (hei_seed < 0.6) { this.hei = 7; }
     if (hei_seed >= 0.6 && hei_seed < 0.9) { this.hei = 8; }
     if (hei_seed >= 0.9 && hei_seed < 1.0) { this.hei = 9; }
     this.neckHei = (int)random(1,5);
@@ -35,6 +35,8 @@ class Head {
     this.eyey = (int)map(hei, 6, 9, 2,4);
     this.reyex = 0;
     this.leyex = eyedistance;
+    this.nosey = eyey + (int)random(1.5,2.5);
+    this.mouthy = nosey + (int)random(1.5,2.5);
   }
   
   void localDraw(int x, int y, int sx, int sy) {
@@ -53,7 +55,7 @@ class Head {
         }
       }
       // EAR
-      fill(this.r,this.g,this.b);
+      fill(this.r-10,this.g-10,this.b-10);
       localDraw(x, y, wid, eary);
 
        // EYES
@@ -71,7 +73,7 @@ class Head {
         localDraw(x, y, leyex, eyey-1 );
 
   // NECK
-        fill(this.r,this.g,this.b);
+        fill(this.r-10,this.g-10,this.b-10);
         for(int i = 0; i < this.neckWid; ++i) {
           for(int j = 0; j < this.neckHei; ++j) {
             localDraw(x, y, (this.wid/2)+i, this.hei + j);
@@ -80,20 +82,20 @@ class Head {
 
   // Nose
   fill(this.r-20, this.g-20, this.b-20);
-  localDraw(x, y, (this.wid/2)-1, eary+1 );
+  localDraw(x, y, reyex+1, nosey);
  
   // Mouth
    fill(this.r-30, this.g-30, this.b-30);
-   localDraw(x, y, (this.wid/2)-1, eary+2 );
-   localDraw(x, y, (this.wid/2), eary+2 );
+   localDraw(x, y, reyex+1, mouthy );
+   localDraw(x, y, reyex+2, mouthy );
   // HAIR
    fill(0);
    for(int i = 0; i < this.wid; ++i) {
       localDraw( x, y, i, 0);
       localDraw( x, y, i, -1);
-      localDraw( x, y, -1, (int)random(0,i));
       if ( i < eary) localDraw( x, y, this.wid, i);
    }
+      /*
    for(int i = 0; i < this.wid-1; ++i) {
       if (random(1) > 0.3) {
         localDraw( x, y, i, eary+2);
@@ -103,7 +105,7 @@ class Head {
         }
       }
    }
-   /*
+
    rect( (width/2 - 5*scale*((facewidth/2))) + facewidth*scale*5,  (8*5*scale), 5*scale, 5*scale);
    rect( (width/2 - 5*scale*((facewidth/2))) + -1*scale*5,  (7*5*scale), 5*scale, 5*scale);
     for(int i = 0; i < faceheight/2; ++i) {
