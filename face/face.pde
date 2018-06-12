@@ -1,25 +1,32 @@
+Head[] h = new Head[100];
 void setup() {
   background(#69697C);
-  size(330, 1380);
-  noLoop();
+  fullScreen();
+  //size(220, 350);
+  frameRate(2);
+  //noLoop();
+  for(int i = 0; i < 100; ++i) {
+  h[i] = new Head();
+  }  
 }
 
 
 void draw() {
   if (debug) debugDraw();
-  
-  noStroke();
-  int facewidth = 4;
-  int faceheight = 7;
-  // FACE MASK
-  for(int i = 0; i < facewidth; ++i) {
-    for(int j = 0; j < faceheight; ++j) {
-      fill(#F2D5BF);
-      rect( ((width/2 - 5*scale*(facewidth/2)) + 5*scale*i) , (9*5*scale) + 5*scale*j, 5*scale, 5*scale);
+  background(#69697C);
+  int k = 0;
+  for(int i = 0; i < 10; ++i) {
+    for(int j = 0; j < 10; ++j) {
+      h[k].drawHead(i,j);
+      h[k].reset();
+      k++;
     }
   }
+  
+  /*
+
   // EAR
-  fill(#F2D5BF);
+  f//i#F2D5BF);
   rect( (width/2 - 5*scale*(facewidth/2)) + scale*5*facewidth, (9*5*scale) + 5*scale*(faceheight/2), 5*scale, 5*scale);
   // EYES
   fill(0);
@@ -52,4 +59,5 @@ void draw() {
     for(int i = 0; i < faceheight/2; ++i) {
      rect( (width/2 - 5*scale*(facewidth/2)) + scale*5*facewidth,  (9*5*scale) + 5*scale*i, 5*scale, 5*scale);
    }
+   */
 }
