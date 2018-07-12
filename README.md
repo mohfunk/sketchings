@@ -1,3 +1,3 @@
 # AudioVisualizer
 
-![gif](https://github.com/mohfunk/AudioVis/blob/master/s.gif)
+![gif](https://github.com/mohfunk/AudioVisualizer/blob/master/s.gif)
