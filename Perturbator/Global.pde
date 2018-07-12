@@ -2,10 +2,10 @@ import ddf.minim.*;
 import ddf.minim.analysis.*;
 Minim minim;
 
-int songs = 5;
+int songs = 1;
 AudioPlayer[] s = new AudioPlayer[songs];
 FFT[] fft = new FFT[songs];
-String[] songname = { "Sinking.mp3", "FC.wav", "m.wav", "s.wav", "c.wav"};
+String[] songname = {"gc.mp3"};
 int snum = 0;
 float[] spec = { 0.010, 0.035, 0.060, 0.120, 0.240, 0.360, 0.480, 0.650, 0.820, 1.000 };
 float[] scor = { 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000 }; 
